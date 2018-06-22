@@ -1,5 +1,0 @@
-D:\Administrator\Documents\Visual Studio 2013\Projects\CopyAlgorithm\CopyAlgorithm\obj\Debug\CheatingAlgorithm.csprojResolveAssemblyReference.cache
-D:\Administrator\Documents\Visual Studio 2013\Projects\CopyAlgorithm\CopyAlgorithm\bin\Debug\CopyAlgorithm.dll
-D:\Administrator\Documents\Visual Studio 2013\Projects\CopyAlgorithm\CopyAlgorithm\bin\Debug\CopyAlgorithm.pdb
-D:\Administrator\Documents\Visual Studio 2013\Projects\CopyAlgorithm\CopyAlgorithm\obj\Debug\CopyAlgorithm.dll
-D:\Administrator\Documents\Visual Studio 2013\Projects\CopyAlgorithm\CopyAlgorithm\obj\Debug\CopyAlgorithm.pdb
