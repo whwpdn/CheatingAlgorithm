@@ -13,8 +13,8 @@ namespace CheatingAlgorithm
 {
     public partial class Form1 : Form
     {
-        CheatingStack<int> testStack; 
-
+        CheatingStack<int> testStack;
+        CheatingQueue<int> testQueue;
         public Form1()
         {
             InitializeComponent();
@@ -35,53 +35,81 @@ namespace CheatingAlgorithm
             tmp = aaa.PopFront();
             label1.Text = tmp.ToString();
              * */
-
-
-            
-            
-
-            
-
         }
 
+
+
+        //stack test
         private void button3_Click(object sender, EventArgs e)
         {
             if (tbMax.Text.Equals("")) return;
             testStack = new CheatingStack<int>(Int32.Parse(tbMax.Text));
             this.btPop.Enabled = true;
             this.btPush.Enabled = true;
-            
-            UpdateStackList(testStack.Clone());
+
+            UpdateStackList(this.listStack, testStack.Clone());
         }
 
         private void btPush_Click(object sender, EventArgs e)
         {
             testStack.Push(Int32.Parse(tbData.Text));
-            UpdateStackList(testStack.Clone());
+            UpdateStackList(this.listStack, testStack.Clone());
         }
 
         private void btPop_Click(object sender, EventArgs e)
         {
             this.lbPop.Text = testStack.Pop().ToString();
-            UpdateStackList(testStack.Clone());
+            UpdateStackList(this.listStack,testStack.Clone());
         }
 
-        private void UpdateStackList(int[] Items)
+        private void UpdateStackList(ListBox listbox ,int[] Items)
         {
-            listStack.Items.Clear();
+            listbox.Items.Clear();
             if (Items == null) return;
-            foreach(var item in Items)
+            foreach (var item in Items)
             {
-                listStack.Items.Add(item);
+                listbox.Items.Add(item);
             }
-            
+
         }
 
         private void tabPage2_Enter(object sender, EventArgs e)
         {
             this.btPop.Enabled = false;
             this.btPush.Enabled = false;
-            
         }
+
+        private void btCreate2_Click(object sender, EventArgs e)
+        {
+            if (tbMax2.Text.Equals("")) return;
+            testQueue = new CheatingQueue<int>(Int32.Parse(tbMax2.Text));
+            this.btPop2.Enabled = true;
+            this.btPush2.Enabled = true;
+
+            UpdateStackList(this.listQueue, testQueue.Clone());
+        }
+
+        private void btPush2_Click(object sender, EventArgs e)
+        {
+            testQueue.Push(Int32.Parse(tbData2.Text));
+            UpdateStackList(this.listQueue, testQueue.Clone());
+        }
+
+        private void btPop2_Click(object sender, EventArgs e)
+        {
+            this.lbPopdata2.Text = testQueue.Pop().ToString();
+            UpdateStackList(this.listQueue, testQueue.Clone());
+        }
+
+        private void tabPage3_Enter(object sender, EventArgs e)
+        {
+            this.btPop2.Enabled = false;
+            this.btPush2.Enabled = false;
+        }
+
+        // queue
+
+
     }
+        
 }

@@ -29,62 +29,121 @@ namespace CheatingAlgorithm
         public Node<T> Next { get; set; }
     }
 
-    // stack
-    public class CheatingStack<T>
+    public class DataStructure<T>
     {
-        T[] data;
-        int top =-1;
-        int max;
-        public int Size
-        {
-            get{return top;}
-        }
-        public bool IsEmpty
-        {
-            get { return top<0? true : false; }
-        }
-        public bool IsFull
-        {
-            get { return top < (max-1) ? false : true; }
-        }
-        
-        // for test
-        public T[] Clone()
-        {
-            if (top < 0)
-                return null;
-            T[] data = new T[top+1];
-            for (int i = 0; i <= top; i++)
-            {
-                data[i] = this.data[i];
-            }
-                return data;
-        }
+        protected T[] data;
+        protected int max;
+        protected int index = -1;
+        //protected DataStructure()
+        //{
 
-        public CheatingStack(int size)
+        //}
+        protected DataStructure(int size)
         {
             max = size;
             this.data = new T[size];
         }
+        public int Size
+        {
+            get { return index; }
+        }
+        public bool IsEmpty
+        {
+            get { return index < 0 ? true : false; }
+        }
+        public bool IsFull
+        {
+            get { return index < (max - 1) ? false : true; }
+        }
+        // for test
+        public T[] Clone()
+        {
+            if (index < 0)
+                return null;
+            T[] data = new T[index + 1];
+            for (int i = 0; i <= index; i++)
+            {
+                data[i] = this.data[i];
+            }
+            return data;
+        }
+    }
+    // queue
+    public class CheatingQueue<T> : DataStructure<T>
+    {
+        int front = 0;
+        public CheatingQueue(int size):base(size)
+        {
+            
+        }
 
         public void Push(T data)
         {
-            if (max > top)
+            if (IsFull)
             {
-                top++;
-                this.data[top] = data;
+                throw new Exception("Queue is full");
+                
             }
             else
             {
-                throw new Exception("stack is full");
+                index++;
+                this.data[index] = data;
             }
         }
 
         public T Pop()
         {
-            if(top >-1)
+            if (IsEmpty)
+            {
+                throw new Exception("stack is empty");
+                
+            }
+            else
+            {
+                T popdata = this.data[0];
+                ShiftQueue();
+                index--;
+                return popdata;
+            }
+        }
+        private void ShiftQueue()
+        {
+            for(int i=0; i< index ; i++)
+            {
+                this.data[i] = this.data[i + 1];
+            }
+        }
+    }
+    // stack
+    public class CheatingStack<T> : DataStructure<T>
+    {
+        int top = 0;
+        public CheatingStack(int size) :base(size)
+        {
+            
+        }
+
+        public void Push(T data)
+        {
+            if (IsFull)
+            {
+                throw new Exception("stack is full");
+                
+            }
+            else
+            {
+                index++;
+                this.data[index] = data;
+                top++;
+            }
+        }
+
+        public T Pop()
+        {
+            if(index >-1)
             {
                 T popdata = data[top];
+                index--;
                 top--;
                 return popdata;
             }
@@ -92,7 +151,6 @@ namespace CheatingAlgorithm
             {
                 throw new Exception("stack is empty");
             }
-            
         }
     }
     // one way linkedlist 
