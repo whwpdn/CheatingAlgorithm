@@ -1,0 +1,9 @@
+D:\Administrator\Documents\Visual Studio 2013\Projects\CopyAlgorithm\CopyAlgorithm\bin\Release\CopyAlgorithm.dll
+D:\Administrator\Documents\Visual Studio 2013\Projects\CopyAlgorithm\CopyAlgorithm\bin\Release\CopyAlgorithm.pdb
+D:\Administrator\Documents\Visual Studio 2013\Projects\CopyAlgorithm\CopyAlgorithm\obj\Release\CopyAlgorithm.dll
+D:\Administrator\Documents\Visual Studio 2013\Projects\CopyAlgorithm\CopyAlgorithm\obj\Release\CopyAlgorithm.pdb
+D:\Administrator\Documents\Visual Studio 2013\Projects\CheatingAlgorithm\CheatingAlgorithm\obj\Release\CheatingAlgorithm.csprojResolveAssemblyReference.cache
+D:\Administrator\Documents\Visual Studio 2013\Projects\CheatingAlgorithm\CheatingAlgorithm\bin\Release\CheatingAlgorithm.dll
+D:\Administrator\Documents\Visual Studio 2013\Projects\CheatingAlgorithm\CheatingAlgorithm\bin\Release\CheatingAlgorithm.pdb
+D:\Administrator\Documents\Visual Studio 2013\Projects\CheatingAlgorithm\CheatingAlgorithm\obj\Release\CheatingAlgorithm.dll
+D:\Administrator\Documents\Visual Studio 2013\Projects\CheatingAlgorithm\CheatingAlgorithm\obj\Release\CheatingAlgorithm.pdb
