@@ -46,9 +46,18 @@
             this.tbData2 = new System.Windows.Forms.TextBox();
             this.btPop2 = new System.Windows.Forms.Button();
             this.btPush2 = new System.Windows.Forms.Button();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.lbPopData3 = new System.Windows.Forms.Label();
+            this.btCreate3 = new System.Windows.Forms.Button();
+            this.tbMax3 = new System.Windows.Forms.TextBox();
+            this.listCircularQueue = new System.Windows.Forms.ListBox();
+            this.tbData3 = new System.Windows.Forms.TextBox();
+            this.btPop3 = new System.Windows.Forms.Button();
+            this.btPush3 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -56,6 +65,7 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -235,6 +245,87 @@
             this.btPush2.UseVisualStyleBackColor = true;
             this.btPush2.Click += new System.EventHandler(this.btPush2_Click);
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.lbPopData3);
+            this.tabPage4.Controls.Add(this.btCreate3);
+            this.tabPage4.Controls.Add(this.tbMax3);
+            this.tabPage4.Controls.Add(this.listCircularQueue);
+            this.tabPage4.Controls.Add(this.tbData3);
+            this.tabPage4.Controls.Add(this.btPop3);
+            this.tabPage4.Controls.Add(this.btPush3);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(617, 447);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "tabPage4";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            this.tabPage4.Enter += new System.EventHandler(this.tabPage4_Enter);
+            // 
+            // lbPopData3
+            // 
+            this.lbPopData3.AutoSize = true;
+            this.lbPopData3.Location = new System.Drawing.Point(201, 325);
+            this.lbPopData3.Name = "lbPopData3";
+            this.lbPopData3.Size = new System.Drawing.Size(54, 12);
+            this.lbPopData3.TabIndex = 20;
+            this.lbPopData3.Text = "pop data";
+            // 
+            // btCreate3
+            // 
+            this.btCreate3.Location = new System.Drawing.Point(203, 111);
+            this.btCreate3.Name = "btCreate3";
+            this.btCreate3.Size = new System.Drawing.Size(75, 23);
+            this.btCreate3.TabIndex = 19;
+            this.btCreate3.Text = "create";
+            this.btCreate3.UseVisualStyleBackColor = true;
+            this.btCreate3.Click += new System.EventHandler(this.btCreate3_Click);
+            // 
+            // tbMax3
+            // 
+            this.tbMax3.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.tbMax3.Location = new System.Drawing.Point(73, 111);
+            this.tbMax3.Name = "tbMax3";
+            this.tbMax3.Size = new System.Drawing.Size(100, 21);
+            this.tbMax3.TabIndex = 18;
+            // 
+            // listCircularQueue
+            // 
+            this.listCircularQueue.FormattingEnabled = true;
+            this.listCircularQueue.ItemHeight = 12;
+            this.listCircularQueue.Location = new System.Drawing.Point(317, 83);
+            this.listCircularQueue.Name = "listCircularQueue";
+            this.listCircularQueue.Size = new System.Drawing.Size(227, 280);
+            this.listCircularQueue.TabIndex = 17;
+            // 
+            // tbData3
+            // 
+            this.tbData3.Location = new System.Drawing.Point(73, 266);
+            this.tbData3.Name = "tbData3";
+            this.tbData3.Size = new System.Drawing.Size(100, 21);
+            this.tbData3.TabIndex = 16;
+            // 
+            // btPop3
+            // 
+            this.btPop3.Location = new System.Drawing.Point(98, 320);
+            this.btPop3.Name = "btPop3";
+            this.btPop3.Size = new System.Drawing.Size(75, 23);
+            this.btPop3.TabIndex = 15;
+            this.btPop3.Text = "pop";
+            this.btPop3.UseVisualStyleBackColor = true;
+            this.btPop3.Click += new System.EventHandler(this.btPop3_Click);
+            // 
+            // btPush3
+            // 
+            this.btPush3.Location = new System.Drawing.Point(203, 252);
+            this.btPush3.Name = "btPush3";
+            this.btPush3.Size = new System.Drawing.Size(75, 23);
+            this.btPush3.TabIndex = 14;
+            this.btPush3.Text = "push";
+            this.btPush3.UseVisualStyleBackColor = true;
+            this.btPush3.Click += new System.EventHandler(this.btPush3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -248,6 +339,8 @@
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -272,6 +365,14 @@
         private System.Windows.Forms.TextBox tbData2;
         private System.Windows.Forms.Button btPop2;
         private System.Windows.Forms.Button btPush2;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.Label lbPopData3;
+        private System.Windows.Forms.Button btCreate3;
+        private System.Windows.Forms.TextBox tbMax3;
+        private System.Windows.Forms.ListBox listCircularQueue;
+        private System.Windows.Forms.TextBox tbData3;
+        private System.Windows.Forms.Button btPop3;
+        private System.Windows.Forms.Button btPush3;
 
     }
 }

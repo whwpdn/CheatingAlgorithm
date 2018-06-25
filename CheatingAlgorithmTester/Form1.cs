@@ -15,6 +15,7 @@ namespace CheatingAlgorithm
     {
         CheatingStack<int> testStack;
         CheatingQueue<int> testQueue;
+        CheatingCircularQueue<int> testCircularQueue;
         public Form1()
         {
             InitializeComponent();
@@ -79,6 +80,8 @@ namespace CheatingAlgorithm
             this.btPush.Enabled = false;
         }
 
+
+        // Queue
         private void btCreate2_Click(object sender, EventArgs e)
         {
             if (tbMax2.Text.Equals("")) return;
@@ -100,14 +103,44 @@ namespace CheatingAlgorithm
             this.lbPopdata2.Text = testQueue.Pop().ToString();
             UpdateStackList(this.listQueue, testQueue.Clone());
         }
-
+      
         private void tabPage3_Enter(object sender, EventArgs e)
         {
             this.btPop2.Enabled = false;
             this.btPush2.Enabled = false;
         }
 
-        // queue
+        // Circular queue
+        private void btCreate3_Click(object sender, EventArgs e)
+        {
+
+            if (tbMax3.Text.Equals("")) return;
+            testCircularQueue = new CheatingCircularQueue<int>(Int32.Parse(tbMax3.Text));
+            this.btPop3.Enabled = true;
+            this.btPush3.Enabled = true;
+
+            UpdateStackList(this.listCircularQueue, testCircularQueue.Clone());
+        }
+
+        private void btPush3_Click(object sender, EventArgs e)
+        {
+            testCircularQueue.Push(Int32.Parse(tbData3.Text));
+            UpdateStackList(this.listCircularQueue, testCircularQueue.Clone());
+        }
+
+        private void btPop3_Click(object sender, EventArgs e)
+        {
+            this.lbPopData3.Text = testCircularQueue.Pop().ToString();
+            UpdateStackList(this.listCircularQueue, testCircularQueue.Clone());
+        }
+
+        private void tabPage4_Enter(object sender, EventArgs e)
+        {
+            this.btPop3.Enabled = false;
+            this.btPush3.Enabled = false;
+        }
+
+     
 
 
     }
