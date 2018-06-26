@@ -54,10 +54,28 @@
             this.tbData3 = new System.Windows.Forms.TextBox();
             this.btPop3 = new System.Windows.Forms.Button();
             this.btPush3 = new System.Windows.Forms.Button();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.tbSorted5 = new System.Windows.Forms.TextBox();
+            this.tbSorted4 = new System.Windows.Forms.TextBox();
+            this.tbSorted3 = new System.Windows.Forms.TextBox();
+            this.tbSorted2 = new System.Windows.Forms.TextBox();
+            this.tbSorted1 = new System.Windows.Forms.TextBox();
+            this.tbSorted0 = new System.Windows.Forms.TextBox();
+            this.tbRawData5 = new System.Windows.Forms.TextBox();
+            this.tbRawData4 = new System.Windows.Forms.TextBox();
+            this.tbRawData3 = new System.Windows.Forms.TextBox();
+            this.tbRawData2 = new System.Windows.Forms.TextBox();
+            this.tbRawData1 = new System.Windows.Forms.TextBox();
+            this.tbRawData0 = new System.Windows.Forms.TextBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.btInsertion = new System.Windows.Forms.Button();
+            this.btReset = new System.Windows.Forms.Button();
+            this.btSelection = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.tabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -66,6 +84,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -259,7 +278,7 @@
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage4.Size = new System.Drawing.Size(617, 447);
             this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "tabPage4";
+            this.tabPage4.Text = "circularQueue";
             this.tabPage4.UseVisualStyleBackColor = true;
             this.tabPage4.Enter += new System.EventHandler(this.tabPage4_Enter);
             // 
@@ -326,6 +345,186 @@
             this.btPush3.UseVisualStyleBackColor = true;
             this.btPush3.Click += new System.EventHandler(this.btPush3_Click);
             // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.btSelection);
+            this.tabPage5.Controls.Add(this.btReset);
+            this.tabPage5.Controls.Add(this.tbSorted5);
+            this.tabPage5.Controls.Add(this.tbSorted4);
+            this.tabPage5.Controls.Add(this.tbSorted3);
+            this.tabPage5.Controls.Add(this.tbSorted2);
+            this.tabPage5.Controls.Add(this.tbSorted1);
+            this.tabPage5.Controls.Add(this.tbSorted0);
+            this.tabPage5.Controls.Add(this.tbRawData5);
+            this.tabPage5.Controls.Add(this.tbRawData4);
+            this.tabPage5.Controls.Add(this.tbRawData3);
+            this.tabPage5.Controls.Add(this.tbRawData2);
+            this.tabPage5.Controls.Add(this.tbRawData1);
+            this.tabPage5.Controls.Add(this.tbRawData0);
+            this.tabPage5.Controls.Add(this.listBox1);
+            this.tabPage5.Controls.Add(this.btInsertion);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(617, 447);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "sorting";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // tbSorted5
+            // 
+            this.tbSorted5.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tbSorted5.Location = new System.Drawing.Point(302, 56);
+            this.tbSorted5.Name = "tbSorted5";
+            this.tbSorted5.Size = new System.Drawing.Size(51, 26);
+            this.tbSorted5.TabIndex = 3;
+            this.tbSorted5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tbSorted4
+            // 
+            this.tbSorted4.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tbSorted4.Location = new System.Drawing.Point(245, 56);
+            this.tbSorted4.Name = "tbSorted4";
+            this.tbSorted4.Size = new System.Drawing.Size(51, 26);
+            this.tbSorted4.TabIndex = 4;
+            this.tbSorted4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tbSorted3
+            // 
+            this.tbSorted3.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tbSorted3.Location = new System.Drawing.Point(188, 56);
+            this.tbSorted3.Name = "tbSorted3";
+            this.tbSorted3.Size = new System.Drawing.Size(51, 26);
+            this.tbSorted3.TabIndex = 5;
+            this.tbSorted3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tbSorted2
+            // 
+            this.tbSorted2.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tbSorted2.Location = new System.Drawing.Point(131, 56);
+            this.tbSorted2.Name = "tbSorted2";
+            this.tbSorted2.Size = new System.Drawing.Size(51, 26);
+            this.tbSorted2.TabIndex = 6;
+            this.tbSorted2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tbSorted1
+            // 
+            this.tbSorted1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tbSorted1.Location = new System.Drawing.Point(74, 56);
+            this.tbSorted1.Name = "tbSorted1";
+            this.tbSorted1.Size = new System.Drawing.Size(51, 26);
+            this.tbSorted1.TabIndex = 7;
+            this.tbSorted1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tbSorted0
+            // 
+            this.tbSorted0.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tbSorted0.Location = new System.Drawing.Point(17, 56);
+            this.tbSorted0.Name = "tbSorted0";
+            this.tbSorted0.Size = new System.Drawing.Size(51, 26);
+            this.tbSorted0.TabIndex = 8;
+            this.tbSorted0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tbRawData5
+            // 
+            this.tbRawData5.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tbRawData5.Location = new System.Drawing.Point(302, 23);
+            this.tbRawData5.Name = "tbRawData5";
+            this.tbRawData5.Size = new System.Drawing.Size(51, 26);
+            this.tbRawData5.TabIndex = 2;
+            this.tbRawData5.Text = "8";
+            this.tbRawData5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tbRawData4
+            // 
+            this.tbRawData4.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tbRawData4.Location = new System.Drawing.Point(245, 23);
+            this.tbRawData4.Name = "tbRawData4";
+            this.tbRawData4.Size = new System.Drawing.Size(51, 26);
+            this.tbRawData4.TabIndex = 2;
+            this.tbRawData4.Text = "2";
+            this.tbRawData4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tbRawData3
+            // 
+            this.tbRawData3.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tbRawData3.Location = new System.Drawing.Point(188, 23);
+            this.tbRawData3.Name = "tbRawData3";
+            this.tbRawData3.Size = new System.Drawing.Size(51, 26);
+            this.tbRawData3.TabIndex = 2;
+            this.tbRawData3.Text = "13";
+            this.tbRawData3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tbRawData2
+            // 
+            this.tbRawData2.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tbRawData2.Location = new System.Drawing.Point(131, 23);
+            this.tbRawData2.Name = "tbRawData2";
+            this.tbRawData2.Size = new System.Drawing.Size(51, 26);
+            this.tbRawData2.TabIndex = 2;
+            this.tbRawData2.Text = "3";
+            this.tbRawData2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tbRawData1
+            // 
+            this.tbRawData1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tbRawData1.Location = new System.Drawing.Point(74, 23);
+            this.tbRawData1.Name = "tbRawData1";
+            this.tbRawData1.Size = new System.Drawing.Size(51, 26);
+            this.tbRawData1.TabIndex = 2;
+            this.tbRawData1.Text = "7";
+            this.tbRawData1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tbRawData0
+            // 
+            this.tbRawData0.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tbRawData0.Location = new System.Drawing.Point(17, 23);
+            this.tbRawData0.Name = "tbRawData0";
+            this.tbRawData0.Size = new System.Drawing.Size(51, 26);
+            this.tbRawData0.TabIndex = 2;
+            this.tbRawData0.Text = "10";
+            this.tbRawData0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // listBox1
+            // 
+            this.listBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 12;
+            this.listBox1.Location = new System.Drawing.Point(3, 356);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(611, 88);
+            this.listBox1.TabIndex = 1;
+            // 
+            // btInsertion
+            // 
+            this.btInsertion.Location = new System.Drawing.Point(17, 112);
+            this.btInsertion.Name = "btInsertion";
+            this.btInsertion.Size = new System.Drawing.Size(75, 23);
+            this.btInsertion.TabIndex = 0;
+            this.btInsertion.Text = "insertion";
+            this.btInsertion.UseVisualStyleBackColor = true;
+            this.btInsertion.Click += new System.EventHandler(this.btInsertion_Click);
+            // 
+            // btReset
+            // 
+            this.btReset.Location = new System.Drawing.Point(459, 56);
+            this.btReset.Name = "btReset";
+            this.btReset.Size = new System.Drawing.Size(75, 23);
+            this.btReset.TabIndex = 9;
+            this.btReset.Text = "reset";
+            this.btReset.UseVisualStyleBackColor = true;
+            this.btReset.Click += new System.EventHandler(this.btReset_Click);
+            // 
+            // btSelection
+            // 
+            this.btSelection.Location = new System.Drawing.Point(98, 112);
+            this.btSelection.Name = "btSelection";
+            this.btSelection.Size = new System.Drawing.Size(75, 23);
+            this.btSelection.TabIndex = 10;
+            this.btSelection.Text = "selection";
+            this.btSelection.UseVisualStyleBackColor = true;
+            this.btSelection.Click += new System.EventHandler(this.btSelection_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -334,6 +533,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
@@ -341,6 +541,8 @@
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -373,6 +575,23 @@
         private System.Windows.Forms.TextBox tbData3;
         private System.Windows.Forms.Button btPop3;
         private System.Windows.Forms.Button btPush3;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button btInsertion;
+        private System.Windows.Forms.TextBox tbSorted5;
+        private System.Windows.Forms.TextBox tbSorted4;
+        private System.Windows.Forms.TextBox tbSorted3;
+        private System.Windows.Forms.TextBox tbSorted2;
+        private System.Windows.Forms.TextBox tbSorted1;
+        private System.Windows.Forms.TextBox tbSorted0;
+        private System.Windows.Forms.TextBox tbRawData5;
+        private System.Windows.Forms.TextBox tbRawData4;
+        private System.Windows.Forms.TextBox tbRawData3;
+        private System.Windows.Forms.TextBox tbRawData2;
+        private System.Windows.Forms.TextBox tbRawData1;
+        private System.Windows.Forms.TextBox tbRawData0;
+        private System.Windows.Forms.Button btReset;
+        private System.Windows.Forms.Button btSelection;
 
     }
 }

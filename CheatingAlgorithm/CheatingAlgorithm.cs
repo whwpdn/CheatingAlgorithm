@@ -7,13 +7,56 @@ using System.Collections;
 
 namespace CheatingAlgorithm
 {
-    public class CheatingAlgorithm
+    public static class CheatingAlgorithm
     {
-        public void InsertionSort(ref int [] data)
+        public static int[] InsertionSort(this int[] data)
         {
-            
             int size = data.Length;
-            Console.WriteLine(size);
+            int[] sortedData = data;
+            for (int i = 1; i < size; i++ )
+            {
+                int tempData = sortedData[i];
+                for(int j = i; j > 0; j--)
+                {
+                    if (sortedData[j - 1] > tempData)
+                    {
+                        sortedData[j] = sortedData[j - 1];
+                        sortedData[j - 1] = tempData;
+                    }
+                    else
+                        break;
+                }
+            }
+
+            return sortedData;
+        }
+
+        public static int[] SelectionSort(this int[] data)
+        {
+            int size = data.Length;
+            int[] sortedData = data;
+            for (int i = 0; i < size; i++)
+            {
+                int min = i;
+                for(int j= i+1 ; j< size ; j++)
+                {
+                    if(sortedData[min] > sortedData[j])
+                    {
+                        min = j;
+                    }
+                }
+                swap(ref sortedData[min], ref sortedData[i]);
+            }
+
+                return sortedData;
+
+        }
+
+        private static void swap(ref int num1 , ref int num2)
+        {
+            int temp = num1;
+            num1 = num2;
+            num2 = temp;
         }
     }
 

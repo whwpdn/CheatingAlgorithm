@@ -13,32 +13,36 @@ namespace CheatingAlgorithm
 {
     public partial class Form1 : Form
     {
+        //CheatingAlgorithm testSorting;
         CheatingStack<int> testStack;
         CheatingQueue<int> testQueue;
         CheatingCircularQueue<int> testCircularQueue;
+        int[] unsortedDatas;
+        int[] sortedDatas;
         public Form1()
         {
             InitializeComponent();
 
-            // test linkedlist
-            /*
-            CheatingLinkedList<int> aaa = new CheatingLinkedList<int>();
-            aaa.PushBack(1);
-            aaa.PushBack(2);
-            aaa.PushBack(3);
-            aaa.PushBack(4);
-
-            int tmp = aaa.PopFront();
-            label1.Text = tmp.ToString();
-            tmp = aaa.PopFront();
-            label1.Text = tmp.ToString();
-
-            tmp = aaa.PopFront();
-            label1.Text = tmp.ToString();
-             * */
+          
         }
+        private void InitData()
+        {
+            //testSorting = new CheatingAlgorithm();
+            unsortedDatas = new int[6];
+            for(int i=0 ; i<6;i++)
+            {
+                unsortedDatas[i] =Int32.Parse(((TextBox)this.Controls.Find("tbRawData"+i,true)[0]).Text);
+            }
 
-
+            sortedDatas = new int[6];
+        }
+        private void SetSortedData()
+        {
+            for (int i = 0; i < 6; i++)
+            {
+                ((TextBox)this.Controls.Find("tbSorted" + i, true)[0]).Text = sortedDatas[i].ToString();
+            }
+        }
 
         //stack test
         private void button3_Click(object sender, EventArgs e)
@@ -138,6 +142,41 @@ namespace CheatingAlgorithm
         {
             this.btPop3.Enabled = false;
             this.btPush3.Enabled = false;
+        }
+
+
+        /// <summary>
+        /// insertion sort test
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btInsertion_Click(object sender, EventArgs e)
+        {
+
+            //sortedDatas = testSorting.InsertionSort(unsortedDatas);
+            sortedDatas = unsortedDatas.InsertionSort();
+            SetSortedData();
+        }
+
+
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            InitData();
+        }
+
+        private void btReset_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 6; i++)
+            {
+                ((TextBox)this.Controls.Find("tbSorted" + i, true)[0]).Text = 0.ToString();
+            }
+        }
+
+        private void btSelection_Click(object sender, EventArgs e)
+        {
+            sortedDatas = unsortedDatas.SelectionSort();
+            SetSortedData();
         }
 
      
