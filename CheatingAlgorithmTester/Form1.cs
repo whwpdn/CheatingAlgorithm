@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Collections;
+using System.Diagnostics;
 
 namespace CheatingAlgorithm
 {
@@ -154,11 +155,30 @@ namespace CheatingAlgorithm
         {
 
             //sortedDatas = testSorting.InsertionSort(unsortedDatas);
+            Stopwatch swtime = new Stopwatch();
+            swtime.Start();
+
             sortedDatas = unsortedDatas.InsertionSort();
+
+            swtime.Stop();
+            this.listLog.Items.Add(String.Format("Insertion Sorting Elapsed Time: {0}", swtime.Elapsed));
+
             SetSortedData();
+            
+
         }
 
+          private void btSelection_Click(object sender, EventArgs e)
+        {
+            Stopwatch swtime = new Stopwatch();
+            swtime.Start();
 
+            sortedDatas = unsortedDatas.SelectionSort();
+
+            swtime.Stop();
+            this.listLog.Items.Add(String.Format("Selection Sorting Elapsed Time: {0}", swtime.Elapsed));
+            SetSortedData();
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -172,15 +192,6 @@ namespace CheatingAlgorithm
                 ((TextBox)this.Controls.Find("tbSorted" + i, true)[0]).Text = 0.ToString();
             }
         }
-
-        private void btSelection_Click(object sender, EventArgs e)
-        {
-            sortedDatas = unsortedDatas.SelectionSort();
-            SetSortedData();
-        }
-
-     
-
 
     }
         

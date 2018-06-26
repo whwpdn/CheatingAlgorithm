@@ -67,7 +67,7 @@
             this.tbRawData2 = new System.Windows.Forms.TextBox();
             this.tbRawData1 = new System.Windows.Forms.TextBox();
             this.tbRawData0 = new System.Windows.Forms.TextBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listLog = new System.Windows.Forms.ListBox();
             this.btInsertion = new System.Windows.Forms.Button();
             this.btReset = new System.Windows.Forms.Button();
             this.btSelection = new System.Windows.Forms.Button();
@@ -361,7 +361,7 @@
             this.tabPage5.Controls.Add(this.tbRawData2);
             this.tabPage5.Controls.Add(this.tbRawData1);
             this.tabPage5.Controls.Add(this.tbRawData0);
-            this.tabPage5.Controls.Add(this.listBox1);
+            this.tabPage5.Controls.Add(this.listLog);
             this.tabPage5.Controls.Add(this.btInsertion);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
@@ -485,15 +485,15 @@
             this.tbRawData0.Text = "10";
             this.tbRawData0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // listBox1
+            // listLog
             // 
-            this.listBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 12;
-            this.listBox1.Location = new System.Drawing.Point(3, 356);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(611, 88);
-            this.listBox1.TabIndex = 1;
+            this.listLog.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.listLog.FormattingEnabled = true;
+            this.listLog.ItemHeight = 12;
+            this.listLog.Location = new System.Drawing.Point(3, 356);
+            this.listLog.Name = "listLog";
+            this.listLog.Size = new System.Drawing.Size(611, 88);
+            this.listLog.TabIndex = 1;
             // 
             // btInsertion
             // 
@@ -576,7 +576,7 @@
         private System.Windows.Forms.Button btPop3;
         private System.Windows.Forms.Button btPush3;
         private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listLog;
         private System.Windows.Forms.Button btInsertion;
         private System.Windows.Forms.TextBox tbSorted5;
         private System.Windows.Forms.TextBox tbSorted4;
