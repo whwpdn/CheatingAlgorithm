@@ -71,6 +71,7 @@
             this.btInsertion = new System.Windows.Forms.Button();
             this.btReset = new System.Windows.Forms.Button();
             this.btSelection = new System.Windows.Forms.Button();
+            this.btBubble = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -347,6 +348,7 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.btBubble);
             this.tabPage5.Controls.Add(this.btSelection);
             this.tabPage5.Controls.Add(this.btReset);
             this.tabPage5.Controls.Add(this.tbSorted5);
@@ -525,6 +527,16 @@
             this.btSelection.UseVisualStyleBackColor = true;
             this.btSelection.Click += new System.EventHandler(this.btSelection_Click);
             // 
+            // btBubble
+            // 
+            this.btBubble.Location = new System.Drawing.Point(179, 112);
+            this.btBubble.Name = "btBubble";
+            this.btBubble.Size = new System.Drawing.Size(75, 23);
+            this.btBubble.TabIndex = 11;
+            this.btBubble.Text = "bubble";
+            this.btBubble.UseVisualStyleBackColor = true;
+            this.btBubble.Click += new System.EventHandler(this.btBubble_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -592,6 +604,7 @@
         private System.Windows.Forms.TextBox tbRawData0;
         private System.Windows.Forms.Button btReset;
         private System.Windows.Forms.Button btSelection;
+        private System.Windows.Forms.Button btBubble;
 
     }
 }

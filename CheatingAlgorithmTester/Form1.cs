@@ -12,6 +12,7 @@ using System.Diagnostics;
 
 namespace CheatingAlgorithm
 {
+    delegate int[] AlgDelegate();
     public partial class Form1 : Form
     {
         //CheatingAlgorithm testSorting;
@@ -23,7 +24,7 @@ namespace CheatingAlgorithm
         public Form1()
         {
             InitializeComponent();
-
+            
           
         }
         private void InitData()
@@ -145,7 +146,19 @@ namespace CheatingAlgorithm
             this.btPush3.Enabled = false;
         }
 
+        private void Sorting(string name , AlgDelegate dele)
+        {
+            Stopwatch swtime = new Stopwatch();
+            swtime.Start();
 
+            //sortedDatas = unsortedDatas.InsertionSort();
+            sortedDatas = dele();
+
+            swtime.Stop();
+            this.listLog.Items.Add(String.Format("{0} Sorting Elapsed Time: {1}",name, swtime.Elapsed));
+
+            SetSortedData();
+        }
         /// <summary>
         /// insertion sort test
         /// </summary>
@@ -153,33 +166,21 @@ namespace CheatingAlgorithm
         /// <param name="e"></param>
         private void btInsertion_Click(object sender, EventArgs e)
         {
-
-            //sortedDatas = testSorting.InsertionSort(unsortedDatas);
-            Stopwatch swtime = new Stopwatch();
-            swtime.Start();
-
-            sortedDatas = unsortedDatas.InsertionSort();
-
-            swtime.Stop();
-            this.listLog.Items.Add(String.Format("Insertion Sorting Elapsed Time: {0}", swtime.Elapsed));
-
-            SetSortedData();
-            
-
+            AlgDelegate algDelegate = new AlgDelegate(unsortedDatas.InsertionSort);
+            Sorting("insertion", algDelegate);
         }
-
-          private void btSelection_Click(object sender, EventArgs e)
+        
+        private void btSelection_Click(object sender, EventArgs e)
         {
-            Stopwatch swtime = new Stopwatch();
-            swtime.Start();
-
-            sortedDatas = unsortedDatas.SelectionSort();
-
-            swtime.Stop();
-            this.listLog.Items.Add(String.Format("Selection Sorting Elapsed Time: {0}", swtime.Elapsed));
-            SetSortedData();
+            AlgDelegate algDelegate = new AlgDelegate(unsortedDatas.SelectionSort);
+            Sorting("Selection", algDelegate);
         }
-
+        private void btBubble_Click(object sender, EventArgs e)
+        {
+            AlgDelegate algDelegate = new AlgDelegate(unsortedDatas.BubbleSort);
+            Sorting("bubble", algDelegate);
+        }
+        
         private void Form1_Load(object sender, EventArgs e)
         {
             InitData();
@@ -192,6 +193,8 @@ namespace CheatingAlgorithm
                 ((TextBox)this.Controls.Find("tbSorted" + i, true)[0]).Text = 0.ToString();
             }
         }
+
+      
 
     }
         

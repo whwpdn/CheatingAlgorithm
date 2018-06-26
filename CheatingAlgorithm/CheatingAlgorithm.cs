@@ -12,7 +12,7 @@ namespace CheatingAlgorithm
         public static int[] InsertionSort(this int[] data)
         {
             int size = data.Length;
-            int[] sortedData = data;
+            int[] sortedData = (int[])data.Clone();
             for (int i = 1; i < size; i++ )
             {
                 int tempData = sortedData[i];
@@ -34,7 +34,7 @@ namespace CheatingAlgorithm
         public static int[] SelectionSort(this int[] data)
         {
             int size = data.Length;
-            int[] sortedData = data;
+            int[] sortedData = (int[])data.Clone();
             for (int i = 0; i < size; i++)
             {
                 int min = i;
@@ -48,8 +48,25 @@ namespace CheatingAlgorithm
                 swap(ref sortedData[min], ref sortedData[i]);
             }
 
-                return sortedData;
+            return sortedData;
+        }
 
+        public static int[] BubbleSort(this int[] data)
+        {
+            int size = data.Length;
+            int[] sortedData = (int[])data.Clone();
+            //int [] sortedData = new int[size];
+            //sortedData = CopyByValue(sortedData, data);
+            for (int i = 1; i < size; i++ )
+            {
+                for(int j= 0; j< (size-i);j++)
+                {
+                    if (sortedData[j] > sortedData[j + 1])
+                        swap(ref sortedData[j], ref sortedData[j + 1]);
+                }
+            }
+            
+            return sortedData;
         }
 
         private static void swap(ref int num1 , ref int num2)
@@ -57,6 +74,15 @@ namespace CheatingAlgorithm
             int temp = num1;
             num1 = num2;
             num2 = temp;
+        }
+
+        private static int[] CopyByValue(int[] data1, int[] data2)
+        {
+            for(int i=0; i<data2.Length;i++)
+            {
+                data1[i] = data2[i];
+            }
+            return data1;
         }
     }
 
