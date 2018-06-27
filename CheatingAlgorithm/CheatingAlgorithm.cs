@@ -69,6 +69,60 @@ namespace CheatingAlgorithm
             return sortedData;
         }
 
+        public static int[] MergeSort(this int[] data)
+        {
+            int[] sortedData = (int[])data.Clone();
+            DivideArray(sortedData, 0, ( data.Length-1));
+            return sortedData;
+        }
+
+        public static void DivideArray(int[] data, int startIdx  , int endIdx )
+        {
+            
+            if(startIdx < endIdx)
+            {
+                int middleIdx = (startIdx + endIdx) / 2;
+                // 중간으로나눠서 재귀
+                DivideArray(data, startIdx, middleIdx);
+                DivideArray(data, middleIdx+1, endIdx);
+
+                // 합쳐
+                MergeArray(data, startIdx, endIdx, middleIdx);
+            }
+
+
+        }
+
+        private static void MergeArray(int [] data, int startIdx , int endIdx , int middleIdx)
+        {
+            int[] result = new int[data.Length]; 
+            int i = startIdx;
+            int j = middleIdx+1;
+            int copy =0;
+            
+            while ( i <= middleIdx && j <= endIdx)
+            {
+                if (data[i] < data[j])
+                {
+                    result[copy++] = data[i++];
+                }
+                else if (data[i] > data[j])
+                {
+                    result[copy++] = data[j++];
+                }
+            }
+
+            while (i <= middleIdx)
+                result[copy++] = data[i++];
+            while (j <= endIdx)
+                result[copy++] = data[j++];
+
+            for (int k = endIdx; k >= startIdx; k--)
+            {
+                data[k] = result[--copy];
+            }
+        }
+
         private static void swap(ref int num1 , ref int num2)
         {
             int temp = num1;

@@ -180,7 +180,12 @@ namespace CheatingAlgorithm
             AlgDelegate algDelegate = new AlgDelegate(unsortedDatas.BubbleSort);
             Sorting("bubble", algDelegate);
         }
-        
+        private void btMerge_Click(object sender, EventArgs e)
+        {
+            AlgDelegate algDelegate = new AlgDelegate(unsortedDatas.MergeSort);
+            Sorting("Merge", algDelegate);
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             InitData();
@@ -194,6 +199,17 @@ namespace CheatingAlgorithm
             }
         }
 
+        private void tbRawData0_TextChanged(object sender, EventArgs e)
+        {
+            for(int i=0; i<6 ;i++)
+            {
+                unsortedDatas[i] = Int32.Parse(((TextBox)this.Controls.Find("tbRawData" + i, true)[0]).Text);
+            }
+            
+            
+        }
+
+       
       
 
     }

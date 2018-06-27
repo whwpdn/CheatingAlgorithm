@@ -55,6 +55,9 @@
             this.btPop3 = new System.Windows.Forms.Button();
             this.btPush3 = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.btBubble = new System.Windows.Forms.Button();
+            this.btSelection = new System.Windows.Forms.Button();
+            this.btReset = new System.Windows.Forms.Button();
             this.tbSorted5 = new System.Windows.Forms.TextBox();
             this.tbSorted4 = new System.Windows.Forms.TextBox();
             this.tbSorted3 = new System.Windows.Forms.TextBox();
@@ -69,9 +72,7 @@
             this.tbRawData0 = new System.Windows.Forms.TextBox();
             this.listLog = new System.Windows.Forms.ListBox();
             this.btInsertion = new System.Windows.Forms.Button();
-            this.btReset = new System.Windows.Forms.Button();
-            this.btSelection = new System.Windows.Forms.Button();
-            this.btBubble = new System.Windows.Forms.Button();
+            this.btMerge = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -348,6 +349,7 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.btMerge);
             this.tabPage5.Controls.Add(this.btBubble);
             this.tabPage5.Controls.Add(this.btSelection);
             this.tabPage5.Controls.Add(this.btReset);
@@ -372,6 +374,36 @@
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "sorting";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // btBubble
+            // 
+            this.btBubble.Location = new System.Drawing.Point(179, 112);
+            this.btBubble.Name = "btBubble";
+            this.btBubble.Size = new System.Drawing.Size(75, 23);
+            this.btBubble.TabIndex = 11;
+            this.btBubble.Text = "bubble";
+            this.btBubble.UseVisualStyleBackColor = true;
+            this.btBubble.Click += new System.EventHandler(this.btBubble_Click);
+            // 
+            // btSelection
+            // 
+            this.btSelection.Location = new System.Drawing.Point(98, 112);
+            this.btSelection.Name = "btSelection";
+            this.btSelection.Size = new System.Drawing.Size(75, 23);
+            this.btSelection.TabIndex = 10;
+            this.btSelection.Text = "selection";
+            this.btSelection.UseVisualStyleBackColor = true;
+            this.btSelection.Click += new System.EventHandler(this.btSelection_Click);
+            // 
+            // btReset
+            // 
+            this.btReset.Location = new System.Drawing.Point(459, 56);
+            this.btReset.Name = "btReset";
+            this.btReset.Size = new System.Drawing.Size(75, 23);
+            this.btReset.TabIndex = 9;
+            this.btReset.Text = "reset";
+            this.btReset.UseVisualStyleBackColor = true;
+            this.btReset.Click += new System.EventHandler(this.btReset_Click);
             // 
             // tbSorted5
             // 
@@ -436,6 +468,7 @@
             this.tbRawData5.TabIndex = 2;
             this.tbRawData5.Text = "8";
             this.tbRawData5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbRawData5.TextChanged += new System.EventHandler(this.tbRawData0_TextChanged);
             // 
             // tbRawData4
             // 
@@ -446,6 +479,7 @@
             this.tbRawData4.TabIndex = 2;
             this.tbRawData4.Text = "2";
             this.tbRawData4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbRawData4.TextChanged += new System.EventHandler(this.tbRawData0_TextChanged);
             // 
             // tbRawData3
             // 
@@ -456,6 +490,7 @@
             this.tbRawData3.TabIndex = 2;
             this.tbRawData3.Text = "13";
             this.tbRawData3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbRawData3.TextChanged += new System.EventHandler(this.tbRawData0_TextChanged);
             // 
             // tbRawData2
             // 
@@ -466,6 +501,7 @@
             this.tbRawData2.TabIndex = 2;
             this.tbRawData2.Text = "3";
             this.tbRawData2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbRawData2.TextChanged += new System.EventHandler(this.tbRawData0_TextChanged);
             // 
             // tbRawData1
             // 
@@ -476,6 +512,7 @@
             this.tbRawData1.TabIndex = 2;
             this.tbRawData1.Text = "7";
             this.tbRawData1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbRawData1.TextChanged += new System.EventHandler(this.tbRawData0_TextChanged);
             // 
             // tbRawData0
             // 
@@ -486,6 +523,7 @@
             this.tbRawData0.TabIndex = 2;
             this.tbRawData0.Text = "10";
             this.tbRawData0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbRawData0.TextChanged += new System.EventHandler(this.tbRawData0_TextChanged);
             // 
             // listLog
             // 
@@ -507,35 +545,16 @@
             this.btInsertion.UseVisualStyleBackColor = true;
             this.btInsertion.Click += new System.EventHandler(this.btInsertion_Click);
             // 
-            // btReset
+            // btMerge
             // 
-            this.btReset.Location = new System.Drawing.Point(459, 56);
-            this.btReset.Name = "btReset";
-            this.btReset.Size = new System.Drawing.Size(75, 23);
-            this.btReset.TabIndex = 9;
-            this.btReset.Text = "reset";
-            this.btReset.UseVisualStyleBackColor = true;
-            this.btReset.Click += new System.EventHandler(this.btReset_Click);
-            // 
-            // btSelection
-            // 
-            this.btSelection.Location = new System.Drawing.Point(98, 112);
-            this.btSelection.Name = "btSelection";
-            this.btSelection.Size = new System.Drawing.Size(75, 23);
-            this.btSelection.TabIndex = 10;
-            this.btSelection.Text = "selection";
-            this.btSelection.UseVisualStyleBackColor = true;
-            this.btSelection.Click += new System.EventHandler(this.btSelection_Click);
-            // 
-            // btBubble
-            // 
-            this.btBubble.Location = new System.Drawing.Point(179, 112);
-            this.btBubble.Name = "btBubble";
-            this.btBubble.Size = new System.Drawing.Size(75, 23);
-            this.btBubble.TabIndex = 11;
-            this.btBubble.Text = "bubble";
-            this.btBubble.UseVisualStyleBackColor = true;
-            this.btBubble.Click += new System.EventHandler(this.btBubble_Click);
+            this.btMerge.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btMerge.Location = new System.Drawing.Point(260, 112);
+            this.btMerge.Name = "btMerge";
+            this.btMerge.Size = new System.Drawing.Size(75, 23);
+            this.btMerge.TabIndex = 11;
+            this.btMerge.Text = "merge";
+            this.btMerge.UseVisualStyleBackColor = true;
+            this.btMerge.Click += new System.EventHandler(this.btMerge_Click);
             // 
             // Form1
             // 
@@ -605,6 +624,7 @@
         private System.Windows.Forms.Button btReset;
         private System.Windows.Forms.Button btSelection;
         private System.Windows.Forms.Button btBubble;
+        private System.Windows.Forms.Button btMerge;
 
     }
 }
