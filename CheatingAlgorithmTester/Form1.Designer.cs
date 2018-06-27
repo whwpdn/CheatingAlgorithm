@@ -73,6 +73,11 @@
             this.listLog = new System.Windows.Forms.ListBox();
             this.btInsertion = new System.Windows.Forms.Button();
             this.btMerge = new System.Windows.Forms.Button();
+            this.cbAlg = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbCount = new System.Windows.Forms.Label();
+            this.btNext = new System.Windows.Forms.Button();
+            this.btEnd = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -349,6 +354,11 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.btEnd);
+            this.tabPage5.Controls.Add(this.btNext);
+            this.tabPage5.Controls.Add(this.lbCount);
+            this.tabPage5.Controls.Add(this.label1);
+            this.tabPage5.Controls.Add(this.cbAlg);
             this.tabPage5.Controls.Add(this.btMerge);
             this.tabPage5.Controls.Add(this.btBubble);
             this.tabPage5.Controls.Add(this.btSelection);
@@ -377,7 +387,7 @@
             // 
             // btBubble
             // 
-            this.btBubble.Location = new System.Drawing.Point(179, 112);
+            this.btBubble.Location = new System.Drawing.Point(179, 153);
             this.btBubble.Name = "btBubble";
             this.btBubble.Size = new System.Drawing.Size(75, 23);
             this.btBubble.TabIndex = 11;
@@ -387,7 +397,7 @@
             // 
             // btSelection
             // 
-            this.btSelection.Location = new System.Drawing.Point(98, 112);
+            this.btSelection.Location = new System.Drawing.Point(98, 153);
             this.btSelection.Name = "btSelection";
             this.btSelection.Size = new System.Drawing.Size(75, 23);
             this.btSelection.TabIndex = 10;
@@ -397,7 +407,7 @@
             // 
             // btReset
             // 
-            this.btReset.Location = new System.Drawing.Point(459, 56);
+            this.btReset.Location = new System.Drawing.Point(17, 182);
             this.btReset.Name = "btReset";
             this.btReset.Size = new System.Drawing.Size(75, 23);
             this.btReset.TabIndex = 9;
@@ -537,7 +547,7 @@
             // 
             // btInsertion
             // 
-            this.btInsertion.Location = new System.Drawing.Point(17, 112);
+            this.btInsertion.Location = new System.Drawing.Point(17, 153);
             this.btInsertion.Name = "btInsertion";
             this.btInsertion.Size = new System.Drawing.Size(75, 23);
             this.btInsertion.TabIndex = 0;
@@ -548,13 +558,58 @@
             // btMerge
             // 
             this.btMerge.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btMerge.Location = new System.Drawing.Point(260, 112);
+            this.btMerge.Location = new System.Drawing.Point(260, 153);
             this.btMerge.Name = "btMerge";
             this.btMerge.Size = new System.Drawing.Size(75, 23);
             this.btMerge.TabIndex = 11;
             this.btMerge.Text = "merge";
             this.btMerge.UseVisualStyleBackColor = true;
             this.btMerge.Click += new System.EventHandler(this.btMerge_Click);
+            // 
+            // cbAlg
+            // 
+            this.cbAlg.FormattingEnabled = true;
+            this.cbAlg.Location = new System.Drawing.Point(17, 109);
+            this.cbAlg.Name = "cbAlg";
+            this.cbAlg.Size = new System.Drawing.Size(121, 20);
+            this.cbAlg.TabIndex = 12;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(395, 37);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 12);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "횟수";
+            // 
+            // lbCount
+            // 
+            this.lbCount.AutoSize = true;
+            this.lbCount.Location = new System.Drawing.Point(430, 37);
+            this.lbCount.Name = "lbCount";
+            this.lbCount.Size = new System.Drawing.Size(0, 12);
+            this.lbCount.TabIndex = 13;
+            // 
+            // btNext
+            // 
+            this.btNext.Location = new System.Drawing.Point(144, 109);
+            this.btNext.Name = "btNext";
+            this.btNext.Size = new System.Drawing.Size(75, 23);
+            this.btNext.TabIndex = 14;
+            this.btNext.Text = "next";
+            this.btNext.UseVisualStyleBackColor = true;
+            this.btNext.Click += new System.EventHandler(this.btNext_Click);
+            // 
+            // btEnd
+            // 
+            this.btEnd.Location = new System.Drawing.Point(225, 109);
+            this.btEnd.Name = "btEnd";
+            this.btEnd.Size = new System.Drawing.Size(75, 23);
+            this.btEnd.TabIndex = 14;
+            this.btEnd.Text = "end";
+            this.btEnd.UseVisualStyleBackColor = true;
+            this.btEnd.Click += new System.EventHandler(this.btEnd_Click);
             // 
             // Form1
             // 
@@ -625,6 +680,11 @@
         private System.Windows.Forms.Button btSelection;
         private System.Windows.Forms.Button btBubble;
         private System.Windows.Forms.Button btMerge;
+        private System.Windows.Forms.Button btEnd;
+        private System.Windows.Forms.Button btNext;
+        private System.Windows.Forms.Label lbCount;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbAlg;
 
     }
 }

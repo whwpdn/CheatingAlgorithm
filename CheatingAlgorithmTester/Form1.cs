@@ -13,6 +13,13 @@ using System.Diagnostics;
 namespace CheatingAlgorithm
 {
     delegate int[] AlgDelegate();
+    enum AlgorithmType
+    {
+        Selection =0,
+        Insertion ,
+        Bubble,
+        Merge,
+    }
     public partial class Form1 : Form
     {
         //CheatingAlgorithm testSorting;
@@ -37,7 +44,20 @@ namespace CheatingAlgorithm
             }
 
             sortedDatas = new int[6];
+
+            InitAlgTypeCombobox();
+            
         }
+
+        private void InitAlgTypeCombobox()
+        {
+            foreach(string algtype in Enum.GetNames(typeof(AlgorithmType)))
+            {
+                this.cbAlg.Items.Add(algtype);
+            }
+            this.cbAlg.SelectedIndex = 0;
+        }
+
         private void SetSortedData()
         {
             for (int i = 0; i < 6; i++)
@@ -207,6 +227,16 @@ namespace CheatingAlgorithm
             }
             
             
+        }
+
+        private void btNext_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btEnd_Click(object sender, EventArgs e)
+        {
+
         }
 
        
