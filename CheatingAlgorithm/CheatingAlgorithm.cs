@@ -30,7 +30,23 @@ namespace CheatingAlgorithm
 
             return sortedData;
         }
+        public static int [] InsertionSortTest(this int[] data ,int tempData, ref int inIdx)
+        {
+            int[] sortedData = (int[])data.Clone();
+            //int tempData = sortedData[outIdx];
 
+            if (sortedData[inIdx - 1] > tempData)
+            {
+                sortedData[inIdx] = sortedData[inIdx - 1];
+                sortedData[inIdx - 1] = tempData;
+                inIdx--;
+            }
+            else
+                inIdx = 0;
+
+            return sortedData;
+
+        }
         public static int[] SelectionSort(this int[] data)
         {
             int size = data.Length;
@@ -50,7 +66,32 @@ namespace CheatingAlgorithm
 
             return sortedData;
         }
+        public static int [] SelectionSortTest(this int[] data ,ref int outIdx , ref int inIdx , ref int min)
+        {
+            int[] sortedData = (int[])data.Clone();
 
+            if (sortedData[min] > sortedData[inIdx])
+            {
+                min = inIdx;
+            }
+            
+            inIdx++;
+
+            if(inIdx >= sortedData.Length)    
+            {
+                swap(ref sortedData[min], ref sortedData[outIdx]);
+                min = ++outIdx;
+                inIdx = outIdx+1;
+            }
+            
+            return sortedData;
+        }
+
+        /// <summary>
+        /// BubbleSort
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
         public static int[] BubbleSort(this int[] data)
         {
             int size = data.Length;
@@ -68,7 +109,11 @@ namespace CheatingAlgorithm
             
             return sortedData;
         }
-
+        /// <summary>
+        /// mergesort
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
         public static int[] MergeSort(this int[] data)
         {
             int[] sortedData = (int[])data.Clone();
@@ -122,14 +167,15 @@ namespace CheatingAlgorithm
                 data[k] = result[--copy];
             }
         }
-
+        
+        //
         private static void swap(ref int num1 , ref int num2)
         {
             int temp = num1;
             num1 = num2;
             num2 = temp;
         }
-
+        ///
         private static int[] CopyByValue(int[] data1, int[] data2)
         {
             for(int i=0; i<data2.Length;i++)

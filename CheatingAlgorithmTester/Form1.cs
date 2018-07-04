@@ -20,14 +20,21 @@ namespace CheatingAlgorithm
         Bubble,
         Merge,
     }
+    delegate void AlgTestDelegate();
     public partial class Form1 : Form
     {
         //CheatingAlgorithm testSorting;
         CheatingStack<int> testStack;
         CheatingQueue<int> testQueue;
         CheatingCircularQueue<int> testCircularQueue;
+        int[] TempDatas;
         int[] unsortedDatas;
         int[] sortedDatas;
+        int OutIdx;
+        int InIdx;
+        int TempValue;
+        int Count =0;
+        AlgTestDelegate algTestDele;
         public Form1()
         {
             InitializeComponent();
@@ -44,7 +51,7 @@ namespace CheatingAlgorithm
             }
 
             sortedDatas = new int[6];
-
+            TempDatas = (int[])unsortedDatas.Clone();
             InitAlgTypeCombobox();
             
         }
@@ -57,13 +64,42 @@ namespace CheatingAlgorithm
             }
             this.cbAlg.SelectedIndex = 0;
         }
-
-        private void SetSortedData()
+        private void SetInitialValue(AlgorithmType type)
+        {
+            switch(type)
+            {
+                case AlgorithmType.Insertion:
+                    OutIdx =1;
+                    InIdx = OutIdx;
+                    TempValue = TempDatas[OutIdx];
+                    Count = 0;
+                    algTestDele = new AlgTestDelegate(InsertionSortTest);
+                    break;
+                case AlgorithmType.Selection:
+                    OutIdx = 0;
+                    InIdx = OutIdx + 1;
+                    TempValue = OutIdx;
+                    Count = 0;
+                    algTestDele = new AlgTestDelegate(SelectionSortTest);
+                    break;
+            }
+        }
+        private void SetSortedData(int [] data)
         {
             for (int i = 0; i < 6; i++)
             {
-                ((TextBox)this.Controls.Find("tbSorted" + i, true)[0]).Text = sortedDatas[i].ToString();
+                ((TextBox)this.Controls.Find("tbSorted" + i, true)[0]).Text = data[i].ToString();
             }
+        }
+
+        private void SetSortedDataColor(int index1, int index2)
+        {
+            for (int i = 0; i < 6; i++)
+            {
+                ((TextBox)this.Controls.Find("tbSorted" + i, true)[0]).BackColor = Color.White;
+            }
+            ((TextBox)this.Controls.Find("tbSorted" + index1, true)[0]).BackColor = Color.Red;
+            ((TextBox)this.Controls.Find("tbSorted" + index2, true)[0]).BackColor = Color.Yellow;
         }
 
         //stack test
@@ -177,7 +213,7 @@ namespace CheatingAlgorithm
             swtime.Stop();
             this.listLog.Items.Add(String.Format("{0} Sorting Elapsed Time: {1}",name, swtime.Elapsed));
 
-            SetSortedData();
+            SetSortedData(this.sortedDatas);
         }
         /// <summary>
         /// insertion sort test
@@ -232,6 +268,9 @@ namespace CheatingAlgorithm
         private void btNext_Click(object sender, EventArgs e)
         {
 
+
+            algTestDele();
+            
         }
 
         private void btEnd_Click(object sender, EventArgs e)
@@ -239,7 +278,48 @@ namespace CheatingAlgorithm
 
         }
 
-       
+        private void cbAlg_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SetInitialValue( (AlgorithmType)((ComboBox)sender).SelectedIndex ) ;
+            TempDatas = (int[])unsortedDatas.Clone();
+        }
+        private void SelectionSortTest()
+        {
+            if (InIdx >= TempDatas.Length)
+            {
+                this.listLog.Items.Add("Done");
+                return;
+            }
+            else
+            {
+                SetSortedData(TempDatas);
+                SetSortedDataColor(OutIdx, InIdx);
+                TempDatas = TempDatas.SelectionSortTest(ref OutIdx, ref InIdx, ref TempValue);
+                this.lbCount.Text = (++Count).ToString();
+            }
+            
+        }
+        private void InsertionSortTest()
+        {
+            if (InIdx == 0)
+            {
+                OutIdx++;
+
+                if (OutIdx >= TempDatas.Length)
+                {
+                    this.listLog.Items.Add("Done");
+                    return;
+                }
+
+                InIdx = OutIdx;
+                TempValue = TempDatas[OutIdx];
+            }
+            
+            TempDatas = TempDatas.InsertionSortTest(TempValue, ref InIdx);
+            SetSortedData(TempDatas);
+            SetSortedDataColor(OutIdx, InIdx);
+            this.lbCount.Text = (++Count).ToString();
+        }
       
 
     }
