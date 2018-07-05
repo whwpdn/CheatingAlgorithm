@@ -78,6 +78,7 @@
             this.tbRawData0 = new System.Windows.Forms.TextBox();
             this.listLog = new System.Windows.Forms.ListBox();
             this.btInsertion = new System.Windows.Forms.Button();
+            this.btQuick = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -359,6 +360,7 @@
             this.tabPage5.Controls.Add(this.lbCount);
             this.tabPage5.Controls.Add(this.label1);
             this.tabPage5.Controls.Add(this.cbAlg);
+            this.tabPage5.Controls.Add(this.btQuick);
             this.tabPage5.Controls.Add(this.btMerge);
             this.tabPage5.Controls.Add(this.btBubble);
             this.tabPage5.Controls.Add(this.btSelection);
@@ -613,6 +615,17 @@
             this.btInsertion.UseVisualStyleBackColor = true;
             this.btInsertion.Click += new System.EventHandler(this.btInsertion_Click);
             // 
+            // btQuick
+            // 
+            this.btQuick.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btQuick.Location = new System.Drawing.Point(341, 153);
+            this.btQuick.Name = "btQuick";
+            this.btQuick.Size = new System.Drawing.Size(75, 23);
+            this.btQuick.TabIndex = 11;
+            this.btQuick.Text = "quick";
+            this.btQuick.UseVisualStyleBackColor = true;
+            this.btQuick.Click += new System.EventHandler(this.btQuick_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -687,6 +700,7 @@
         private System.Windows.Forms.Label lbCount;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbAlg;
+        private System.Windows.Forms.Button btQuick;
 
     }
 }

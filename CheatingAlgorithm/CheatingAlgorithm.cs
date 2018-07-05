@@ -121,9 +121,78 @@ namespace CheatingAlgorithm
             return sortedData;
         }
 
+        /// <summary>
+        /// QuickSort - pivot =0
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="left"></param>
+        /// <param name="right"></param>
+        /// <returns></returns>
+        public static int[] QuickSort(this int[] data)
+        {
+            int[] sortedData = (int[])data.Clone();
+            QuickDivideArray(sortedData, 0, (sortedData.Length-1));
+
+            return sortedData;
+        }
+        //private static void QuickDivideArray(this int[] data, int left, int right)
+        //{
+
+        //    int pivot = left;
+        //    int minIdx = pivot;
+        //    if(left < right)
+        //    {
+        //        for (int i = left + 1; i < right; i++)
+        //        {
+        //            if (data[minIdx] > data[i])
+        //            {
+        //                minIdx = i;
+        //            }
+        //        }
+        //        swap(ref data[minIdx], ref data[pivot]);
+        //        pivot = minIdx;
+
+        //        QuickDivideArray(data, left, pivot - 1);
+        //        QuickDivideArray(data, pivot, right);
+        //    }
+            
+
+        //}
+        private static void QuickDivideArray(this int[] data, int left, int right)
+        {
+            int pivot = left;
+            int minIdx = pivot;
+            int i=left+1, j=right;
+
+             while(i<j)
+             {
+                 while(data[i]<data[pivot])
+                 {
+                     i++;
+                 }
+                 while(data[j]>data[pivot])
+                 {
+                     j--;
+                 }
+                 if(i<j)
+                 {
+                     swap(ref data[i],ref data[j]);
+
+                 }
+             }
+             swap(ref data[pivot], ref data[j]);
+            if(left<j)
+            {
+                QuickDivideArray(data, left, j - 1);
+            }
+            if(right>i)
+            {
+                QuickDivideArray(data, j + 1, right);
+            }
+        }
+
         public static void DivideArray(int[] data, int startIdx  , int endIdx )
         {
-            
             if(startIdx < endIdx)
             {
                 int middleIdx = (startIdx + endIdx) / 2;
@@ -134,8 +203,6 @@ namespace CheatingAlgorithm
                 // 합쳐
                 MergeArray(data, startIdx, endIdx, middleIdx);
             }
-
-
         }
 
         private static void MergeArray(int [] data, int startIdx , int endIdx , int middleIdx)

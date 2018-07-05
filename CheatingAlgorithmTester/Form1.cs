@@ -241,6 +241,11 @@ namespace CheatingAlgorithm
             AlgDelegate algDelegate = new AlgDelegate(unsortedDatas.MergeSort);
             Sorting("Merge", algDelegate);
         }
+        private void btQuick_Click(object sender, EventArgs e)
+        {
+            AlgDelegate algDelegate = new AlgDelegate(unsortedDatas.QuickSort);
+            Sorting("Quick", algDelegate);
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -320,6 +325,8 @@ namespace CheatingAlgorithm
             SetSortedDataColor(OutIdx, InIdx);
             this.lbCount.Text = (++Count).ToString();
         }
+
+        
       
 
     }
