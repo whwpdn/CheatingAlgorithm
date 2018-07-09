@@ -39,10 +39,10 @@ namespace CheatingAlgorithm
             {
                 sortedData[inIdx] = sortedData[inIdx - 1];
                 sortedData[inIdx - 1] = tempData;
-                inIdx--;
+                //inIdx--;
             }
             else
-                inIdx = 0;
+                inIdx = 1;
 
             return sortedData;
 
@@ -75,13 +75,11 @@ namespace CheatingAlgorithm
                 min = inIdx;
             }
             
-            inIdx++;
+            //inIdx++;
 
-            if(inIdx >= sortedData.Length)    
+            if(inIdx >= (sortedData.Length-1))
             {
                 swap(ref sortedData[min], ref sortedData[outIdx]);
-                min = ++outIdx;
-                inIdx = outIdx+1;
             }
             
             return sortedData;
@@ -106,6 +104,26 @@ namespace CheatingAlgorithm
                         swap(ref sortedData[j], ref sortedData[j + 1]);
                 }
             }
+            
+            return sortedData;
+        }
+        public static int [] BubbleSortTest(this int[] data , ref int outIdx , ref int inIdx)
+        {
+            int size = data.Length;
+            int[] sortedData = (int[])data.Clone();
+            
+            if (inIdx < (size - outIdx))
+            {
+                if (sortedData[inIdx ] > sortedData[inIdx  + 1])
+                {
+                    swap(ref sortedData[inIdx], ref sortedData[inIdx+1]);
+                }
+            } 
+            else
+            {
+                Console.WriteLine("array index error");
+            }
+         
             
             return sortedData;
         }

@@ -66,6 +66,7 @@ namespace CheatingAlgorithm
         }
         private void SetInitialValue(AlgorithmType type)
         {
+            TempDatas = (int[])unsortedDatas.Clone();
             switch(type)
             {
                 case AlgorithmType.Insertion:
@@ -82,6 +83,13 @@ namespace CheatingAlgorithm
                     Count = 0;
                     algTestDele = new AlgTestDelegate(SelectionSortTest);
                     break;
+                case AlgorithmType.Bubble:
+                     OutIdx = 1;
+                    InIdx = 0;
+                    Count = 0;
+                    algTestDele = new AlgTestDelegate(BubbleSortTest);
+                    break;
+
             }
         }
         private void SetSortedData(int [] data)
@@ -258,6 +266,7 @@ namespace CheatingAlgorithm
             {
                 ((TextBox)this.Controls.Find("tbSorted" + i, true)[0]).Text = 0.ToString();
             }
+            SetInitialValue((AlgorithmType)(this.cbAlg.SelectedIndex));
         }
 
         private void tbRawData0_TextChanged(object sender, EventArgs e)
@@ -288,47 +297,86 @@ namespace CheatingAlgorithm
             SetInitialValue( (AlgorithmType)((ComboBox)sender).SelectedIndex ) ;
             TempDatas = (int[])unsortedDatas.Clone();
         }
-        private void SelectionSortTest()
+        /// <summary>
+        /// 
+        /// </summary>
+        private void BubbleSortTest()
         {
-            if (InIdx >= TempDatas.Length)
+            int size = TempDatas.Length;
+            if(OutIdx < size)
+            {   
+
+                TempDatas = TempDatas.BubbleSortTest(ref OutIdx, ref InIdx);
+                SetSortedDataColor(InIdx, ++InIdx);
+                SetSortedData(TempDatas);
+                this.lbCount.Text = (++Count).ToString();
+            }
+            else
             {
                 this.listLog.Items.Add("Done");
                 return;
             }
-            else
-            {
-                SetSortedData(TempDatas);
-                SetSortedDataColor(OutIdx, InIdx);
-                TempDatas = TempDatas.SelectionSortTest(ref OutIdx, ref InIdx, ref TempValue);
-                this.lbCount.Text = (++Count).ToString();
-            }
-            
-        }
-        private void InsertionSortTest()
-        {
-            if (InIdx == 0)
+
+            if(InIdx >=(size - OutIdx))
             {
                 OutIdx++;
+                InIdx =0;
+            }    
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        private void SelectionSortTest()
+        {
+            if (OutIdx < TempDatas.Length && InIdx < TempDatas.Length)
+            {
+                TempDatas = TempDatas.SelectionSortTest(ref OutIdx, ref InIdx, ref TempValue);
+                SetSortedData(TempDatas);
+                SetSortedDataColor(OutIdx, InIdx++);
+                this.lbCount.Text = (++Count).ToString();    
 
-                if (OutIdx >= TempDatas.Length)
+                if (InIdx >= TempDatas.Length)
                 {
-                    this.listLog.Items.Add("Done");
-                    return;
+                    TempValue = ++OutIdx;
+                    InIdx = OutIdx + 1;
                 }
-
-                InIdx = OutIdx;
-                TempValue = TempDatas[OutIdx];
+            }
+            else
+            {
+            
+                this.listLog.Items.Add("Done");
+                return;
             }
             
-            TempDatas = TempDatas.InsertionSortTest(TempValue, ref InIdx);
-            SetSortedData(TempDatas);
-            SetSortedDataColor(OutIdx, InIdx);
-            this.lbCount.Text = (++Count).ToString();
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        private void InsertionSortTest()
+        {
+            if (OutIdx < TempDatas.Length && InIdx >0)
+            {
+                TempDatas = TempDatas.InsertionSortTest(TempValue, ref InIdx);
+                SetSortedData(TempDatas);
+                SetSortedDataColor(OutIdx, --InIdx);
+                
+                this.lbCount.Text = (++Count).ToString();
+                if (InIdx == 0)
+                {   
+                    OutIdx++;
 
-        
-      
-
+                    if (OutIdx < TempDatas.Length)
+                    {
+                        InIdx = OutIdx;
+                        TempValue = TempDatas[OutIdx];
+                    }
+                }   
+            }
+            else
+            {
+                this.listLog.Items.Add("Done");
+                return;
+            }
+        }
     }
-        
 }
