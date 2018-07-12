@@ -27,6 +27,7 @@ namespace CheatingAlgorithm
         CheatingStack<int> testStack;
         CheatingQueue<int> testQueue;
         CheatingCircularQueue<int> testCircularQueue;
+        CheatingBinaryTree<int> testBinaryTree;
         int[] TempDatas;
         int[] unsortedDatas;
         int[] sortedDatas;
@@ -219,10 +220,50 @@ namespace CheatingAlgorithm
             sortedDatas = dele();
 
             swtime.Stop();
-            this.listLog.Items.Add(String.Format("{0} Sorting Elapsed Time: {1}",name, swtime.Elapsed));
-
+            Log(String.Format("{0} Sorting Elapsed Time: {1}", name, swtime.Elapsed));
             SetSortedData(this.sortedDatas);
         }
+
+        // binary tree
+        //private void btCreate4_Click(object sender, EventArgs e)
+        //{
+        //    testBinaryTree
+        //}
+        private void btPush4_Click(object sender, EventArgs e)
+        {
+            testBinaryTree.Insert(Int32.Parse(tbData4.Text));
+            tbData4.Text = "";
+            tbData4.Focus();
+            //UpdateStackList(this.listBinTree, testBinaryTree.Clone());
+        }
+        private void tabPage6_Enter(object sender, EventArgs e)
+        {
+            if(testBinaryTree ==null)
+            {
+                testBinaryTree = new CheatingBinaryTree<int>();
+            }
+                //this.btPop4.Enabled = false;
+                //this.btPush4.Enabled = false;
+                this.btCreate4.Enabled = false;
+            
+        }
+
+        private void btPreorder_Click(object sender, EventArgs e)
+        {
+            testBinaryTree.Preorder(testBinaryTree.GetRootNode());
+        }
+        private void btPostorder_Click(object sender, EventArgs e)
+        {
+            testBinaryTree.Postorder(testBinaryTree.GetRootNode());
+        }
+
+        private void btInorder_Click(object sender, EventArgs e)
+        {
+            testBinaryTree.Inorder(testBinaryTree.GetRootNode());
+        }
+
+
+
         /// <summary>
         /// insertion sort test
         /// </summary>
@@ -313,7 +354,7 @@ namespace CheatingAlgorithm
             }
             else
             {
-                this.listLog.Items.Add("Done");
+                Log("Done");
                 return;
             }
 
@@ -343,8 +384,8 @@ namespace CheatingAlgorithm
             }
             else
             {
-            
-                this.listLog.Items.Add("Done");
+
+                Log("Done");
                 return;
             }
             
@@ -374,9 +415,23 @@ namespace CheatingAlgorithm
             }
             else
             {
-                this.listLog.Items.Add("Done");
+                Log("Done");
                 return;
             }
         }
+        private void Log(string msg , string para1)
+        {
+            Log(string.Format(msg + para1));
+        }
+        private void Log(string msg)
+        {
+            this.listLog.Items.Add(msg);
+        }
+
+       
+        
+       
+      
+        
     }
 }

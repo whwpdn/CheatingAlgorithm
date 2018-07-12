@@ -31,6 +31,8 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.lbPop = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.tbMax = new System.Windows.Forms.TextBox();
@@ -39,6 +41,8 @@
             this.btPop = new System.Windows.Forms.Button();
             this.btPush = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.lbPopdata2 = new System.Windows.Forms.Label();
             this.btCreate2 = new System.Windows.Forms.Button();
             this.tbMax2 = new System.Windows.Forms.TextBox();
@@ -47,6 +51,8 @@
             this.btPop2 = new System.Windows.Forms.Button();
             this.btPush2 = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.lbPopData3 = new System.Windows.Forms.Label();
             this.btCreate3 = new System.Windows.Forms.Button();
             this.tbMax3 = new System.Windows.Forms.TextBox();
@@ -60,6 +66,7 @@
             this.lbCount = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cbAlg = new System.Windows.Forms.ComboBox();
+            this.btQuick = new System.Windows.Forms.Button();
             this.btMerge = new System.Windows.Forms.Button();
             this.btBubble = new System.Windows.Forms.Button();
             this.btSelection = new System.Windows.Forms.Button();
@@ -76,14 +83,27 @@
             this.tbRawData2 = new System.Windows.Forms.TextBox();
             this.tbRawData1 = new System.Windows.Forms.TextBox();
             this.tbRawData0 = new System.Windows.Forms.TextBox();
-            this.listLog = new System.Windows.Forms.ListBox();
             this.btInsertion = new System.Windows.Forms.Button();
-            this.btQuick = new System.Windows.Forms.Button();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lbPop4 = new System.Windows.Forms.Label();
+            this.btCreate4 = new System.Windows.Forms.Button();
+            this.tbMax4 = new System.Windows.Forms.TextBox();
+            this.listBinTree = new System.Windows.Forms.ListBox();
+            this.tbData4 = new System.Windows.Forms.TextBox();
+            this.btPop4 = new System.Windows.Forms.Button();
+            this.btPush4 = new System.Windows.Forms.Button();
+            this.listLog = new System.Windows.Forms.ListBox();
+            this.btPreorder = new System.Windows.Forms.Button();
+            this.btInorder = new System.Windows.Forms.Button();
+            this.btPostorder = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
+            this.tabPage6.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -93,11 +113,12 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(625, 473);
+            this.tabControl1.Size = new System.Drawing.Size(625, 385);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -105,13 +126,15 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(617, 447);
+            this.tabPage1.Size = new System.Drawing.Size(617, 359);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "LinkedList";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label3);
+            this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Controls.Add(this.lbPop);
             this.tabPage2.Controls.Add(this.button3);
             this.tabPage2.Controls.Add(this.tbMax);
@@ -122,11 +145,29 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(617, 447);
+            this.tabPage2.Size = new System.Drawing.Size(617, 359);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Stack";
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Enter += new System.EventHandler(this.tabPage2_Enter);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(30, 215);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(29, 12);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "data";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(30, 57);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(29, 12);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "size";
             // 
             // lbPop
             // 
@@ -193,6 +234,8 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.label5);
+            this.tabPage3.Controls.Add(this.label4);
             this.tabPage3.Controls.Add(this.lbPopdata2);
             this.tabPage3.Controls.Add(this.btCreate2);
             this.tabPage3.Controls.Add(this.tbMax2);
@@ -203,11 +246,29 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(617, 447);
+            this.tabPage3.Size = new System.Drawing.Size(617, 359);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Queue";
             this.tabPage3.UseVisualStyleBackColor = true;
             this.tabPage3.Enter += new System.EventHandler(this.tabPage3_Enter);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(65, 217);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(29, 12);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "data";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(63, 62);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(29, 12);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "size";
             // 
             // lbPopdata2
             // 
@@ -274,6 +335,8 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.label7);
+            this.tabPage4.Controls.Add(this.label6);
             this.tabPage4.Controls.Add(this.lbPopData3);
             this.tabPage4.Controls.Add(this.btCreate3);
             this.tabPage4.Controls.Add(this.tbMax3);
@@ -284,11 +347,29 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(617, 447);
+            this.tabPage4.Size = new System.Drawing.Size(617, 359);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "circularQueue";
             this.tabPage4.UseVisualStyleBackColor = true;
             this.tabPage4.Enter += new System.EventHandler(this.tabPage4_Enter);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(75, 248);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(29, 12);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "data";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(73, 93);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(29, 12);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "size";
             // 
             // lbPopData3
             // 
@@ -377,12 +458,11 @@
             this.tabPage5.Controls.Add(this.tbRawData2);
             this.tabPage5.Controls.Add(this.tbRawData1);
             this.tabPage5.Controls.Add(this.tbRawData0);
-            this.tabPage5.Controls.Add(this.listLog);
             this.tabPage5.Controls.Add(this.btInsertion);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(617, 447);
+            this.tabPage5.Size = new System.Drawing.Size(617, 359);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "sorting";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -433,6 +513,17 @@
             this.cbAlg.Size = new System.Drawing.Size(121, 20);
             this.cbAlg.TabIndex = 12;
             this.cbAlg.SelectedIndexChanged += new System.EventHandler(this.cbAlg_SelectedIndexChanged);
+            // 
+            // btQuick
+            // 
+            this.btQuick.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btQuick.Location = new System.Drawing.Point(341, 153);
+            this.btQuick.Name = "btQuick";
+            this.btQuick.Size = new System.Drawing.Size(75, 23);
+            this.btQuick.TabIndex = 11;
+            this.btQuick.Text = "quick";
+            this.btQuick.UseVisualStyleBackColor = true;
+            this.btQuick.Click += new System.EventHandler(this.btQuick_Click);
             // 
             // btMerge
             // 
@@ -595,16 +686,6 @@
             this.tbRawData0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbRawData0.TextChanged += new System.EventHandler(this.tbRawData0_TextChanged);
             // 
-            // listLog
-            // 
-            this.listLog.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.listLog.FormattingEnabled = true;
-            this.listLog.ItemHeight = 12;
-            this.listLog.Location = new System.Drawing.Point(3, 356);
-            this.listLog.Name = "listLog";
-            this.listLog.Size = new System.Drawing.Size(611, 88);
-            this.listLog.TabIndex = 1;
-            // 
             // btInsertion
             // 
             this.btInsertion.Location = new System.Drawing.Point(17, 153);
@@ -615,16 +696,147 @@
             this.btInsertion.UseVisualStyleBackColor = true;
             this.btInsertion.Click += new System.EventHandler(this.btInsertion_Click);
             // 
-            // btQuick
+            // tabPage6
             // 
-            this.btQuick.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btQuick.Location = new System.Drawing.Point(341, 153);
-            this.btQuick.Name = "btQuick";
-            this.btQuick.Size = new System.Drawing.Size(75, 23);
-            this.btQuick.TabIndex = 11;
-            this.btQuick.Text = "quick";
-            this.btQuick.UseVisualStyleBackColor = true;
-            this.btQuick.Click += new System.EventHandler(this.btQuick_Click);
+            this.tabPage6.Controls.Add(this.label8);
+            this.tabPage6.Controls.Add(this.label9);
+            this.tabPage6.Controls.Add(this.lbPop4);
+            this.tabPage6.Controls.Add(this.btCreate4);
+            this.tabPage6.Controls.Add(this.tbMax4);
+            this.tabPage6.Controls.Add(this.listBinTree);
+            this.tabPage6.Controls.Add(this.tbData4);
+            this.tabPage6.Controls.Add(this.btPostorder);
+            this.tabPage6.Controls.Add(this.btInorder);
+            this.tabPage6.Controls.Add(this.btPreorder);
+            this.tabPage6.Controls.Add(this.btPop4);
+            this.tabPage6.Controls.Add(this.btPush4);
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(617, 359);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "BinaryTree";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            this.tabPage6.Enter += new System.EventHandler(this.tabPage6_Enter);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(75, 204);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(29, 12);
+            this.label8.TabIndex = 24;
+            this.label8.Text = "data";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(73, 49);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(29, 12);
+            this.label9.TabIndex = 23;
+            this.label9.Text = "size";
+            // 
+            // lbPop4
+            // 
+            this.lbPop4.AutoSize = true;
+            this.lbPop4.Location = new System.Drawing.Point(201, 281);
+            this.lbPop4.Name = "lbPop4";
+            this.lbPop4.Size = new System.Drawing.Size(54, 12);
+            this.lbPop4.TabIndex = 22;
+            this.lbPop4.Text = "pop data";
+            // 
+            // btCreate4
+            // 
+            this.btCreate4.Location = new System.Drawing.Point(203, 67);
+            this.btCreate4.Name = "btCreate4";
+            this.btCreate4.Size = new System.Drawing.Size(75, 23);
+            this.btCreate4.TabIndex = 21;
+            this.btCreate4.Text = "create";
+            this.btCreate4.UseVisualStyleBackColor = true;
+            // 
+            // tbMax4
+            // 
+            this.tbMax4.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.tbMax4.Location = new System.Drawing.Point(73, 67);
+            this.tbMax4.Name = "tbMax4";
+            this.tbMax4.Size = new System.Drawing.Size(100, 21);
+            this.tbMax4.TabIndex = 20;
+            // 
+            // listBinTree
+            // 
+            this.listBinTree.FormattingEnabled = true;
+            this.listBinTree.ItemHeight = 12;
+            this.listBinTree.Location = new System.Drawing.Point(317, 39);
+            this.listBinTree.Name = "listBinTree";
+            this.listBinTree.Size = new System.Drawing.Size(227, 280);
+            this.listBinTree.TabIndex = 19;
+            // 
+            // tbData4
+            // 
+            this.tbData4.Location = new System.Drawing.Point(73, 222);
+            this.tbData4.Name = "tbData4";
+            this.tbData4.Size = new System.Drawing.Size(100, 21);
+            this.tbData4.TabIndex = 18;
+            // 
+            // btPop4
+            // 
+            this.btPop4.Location = new System.Drawing.Point(98, 276);
+            this.btPop4.Name = "btPop4";
+            this.btPop4.Size = new System.Drawing.Size(75, 23);
+            this.btPop4.TabIndex = 17;
+            this.btPop4.Text = "pop";
+            this.btPop4.UseVisualStyleBackColor = true;
+            // 
+            // btPush4
+            // 
+            this.btPush4.Location = new System.Drawing.Point(203, 208);
+            this.btPush4.Name = "btPush4";
+            this.btPush4.Size = new System.Drawing.Size(75, 23);
+            this.btPush4.TabIndex = 16;
+            this.btPush4.Text = "push";
+            this.btPush4.UseVisualStyleBackColor = true;
+            this.btPush4.Click += new System.EventHandler(this.btPush4_Click);
+            // 
+            // listLog
+            // 
+            this.listLog.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.listLog.FormattingEnabled = true;
+            this.listLog.ItemHeight = 12;
+            this.listLog.Location = new System.Drawing.Point(0, 385);
+            this.listLog.Name = "listLog";
+            this.listLog.Size = new System.Drawing.Size(625, 88);
+            this.listLog.TabIndex = 1;
+            // 
+            // btPreorder
+            // 
+            this.btPreorder.Location = new System.Drawing.Point(98, 305);
+            this.btPreorder.Name = "btPreorder";
+            this.btPreorder.Size = new System.Drawing.Size(75, 23);
+            this.btPreorder.TabIndex = 17;
+            this.btPreorder.Text = "preorder";
+            this.btPreorder.UseVisualStyleBackColor = true;
+            this.btPreorder.Click += new System.EventHandler(this.btPreorder_Click);
+            // 
+            // btInorder
+            // 
+            this.btInorder.Location = new System.Drawing.Point(179, 305);
+            this.btInorder.Name = "btInorder";
+            this.btInorder.Size = new System.Drawing.Size(75, 23);
+            this.btInorder.TabIndex = 17;
+            this.btInorder.Text = "Inorder";
+            this.btInorder.UseVisualStyleBackColor = true;
+            this.btInorder.Click += new System.EventHandler(this.btInorder_Click);
+            // 
+            // btPostorder
+            // 
+            this.btPostorder.Location = new System.Drawing.Point(17, 305);
+            this.btPostorder.Name = "btPostorder";
+            this.btPostorder.Size = new System.Drawing.Size(75, 23);
+            this.btPostorder.TabIndex = 17;
+            this.btPostorder.Text = "Postorder";
+            this.btPostorder.UseVisualStyleBackColor = true;
+            this.btPostorder.Click += new System.EventHandler(this.btPostorder_Click);
             // 
             // Form1
             // 
@@ -632,6 +844,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(625, 473);
             this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.listLog);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -644,6 +857,8 @@
             this.tabPage4.PerformLayout();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
+            this.tabPage6.ResumeLayout(false);
+            this.tabPage6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -677,7 +892,6 @@
         private System.Windows.Forms.Button btPop3;
         private System.Windows.Forms.Button btPush3;
         private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.ListBox listLog;
         private System.Windows.Forms.Button btInsertion;
         private System.Windows.Forms.TextBox tbSorted5;
         private System.Windows.Forms.TextBox tbSorted4;
@@ -701,6 +915,26 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbAlg;
         private System.Windows.Forms.Button btQuick;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ListBox listLog;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lbPop4;
+        private System.Windows.Forms.Button btCreate4;
+        private System.Windows.Forms.TextBox tbMax4;
+        private System.Windows.Forms.ListBox listBinTree;
+        private System.Windows.Forms.TextBox tbData4;
+        private System.Windows.Forms.Button btPop4;
+        private System.Windows.Forms.Button btPush4;
+        private System.Windows.Forms.Button btPreorder;
+        private System.Windows.Forms.Button btPostorder;
+        private System.Windows.Forms.Button btInorder;
 
     }
 }

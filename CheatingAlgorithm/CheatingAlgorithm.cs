@@ -280,7 +280,21 @@ namespace CheatingAlgorithm
             this.data = data;
         }
         public T data { get; set; }
-        public Node<T> Next { get; set; }
+        public Node<T> Next { get; set; }   // right
+        public Node<T> Prev { get; set; }   // left
+    }
+
+    public class TreeNode
+    {
+        public TreeNode(int data)
+        {
+            this.data = data;
+        }
+        public bool visited;
+        public int data { get; set; }
+        public int balance { get; set; }
+        public TreeNode Left { get; set; }   // 
+        public TreeNode Right { get; set; }   //
     }
 
     public class DataStructure<T>
@@ -503,5 +517,244 @@ namespace CheatingAlgorithm
 
     
        
+    }
+
+    // Tree
+    public class CheatingBinaryTree<T>
+    {
+        public bool isUnbalanced
+        {
+            get;
+            set;
+        }
+        public int Level
+        {
+            get;
+            set;
+        }
+        TreeNode RootNode;
+        TreeNode LastNode;
+        
+        public CheatingBinaryTree()
+        {
+            Level =0;
+            RootNode = null;
+            LastNode = null;
+        }
+        public TreeNode GetRootNode()
+        {
+            return RootNode;
+        }
+        //public TreeNode GetLastNode(TreeNode parent)
+        //{
+
+        //    if (parent.Left != null)
+        //    {
+        //        return GetLastNode(parent.Left);
+        //    }
+        //    else if (parent.Right != null)
+        //    {
+        //        return GetLastNode(parent.Right);
+        //    }
+        //    else
+        //        return parent;
+            
+        //}
+        private TreeNode RotateLeft(TreeNode rootNode)
+        {
+            TreeNode Temp = rootNode.Right;
+            rootNode.Right = Temp.Left;
+            Temp.Left = rootNode;
+            return Temp;
+        }
+
+        private TreeNode RotateRight(TreeNode rootNode)
+        {
+            TreeNode Temp = rootNode.Left;
+            rootNode.Left = Temp.Right;
+            Temp.Right = rootNode;
+            return Temp;
+        }
+        private TreeNode InsertLeftBalance(TreeNode rootNode)
+        {
+            TreeNode left = rootNode.Left;
+            switch (left.balance)
+            {
+                case 1:
+                    rootNode.balance = 0;
+                    left.balance = 0;
+                    rootNode = RotateRight(rootNode);
+                    this.isUnbalanced = false;
+                    break;
+                case 0:
+                    Console.WriteLine("error");
+                    break;
+                case -1:
+                    TreeNode right = left.Right;
+                    switch(right.balance)
+                    {
+                        case 1:
+                            rootNode.balance = -1;
+                            left.balance = 0;
+                            break;
+                        case 0:
+                            rootNode.balance = 0;
+                            left.balance = 1;
+                            break;
+                        case -1:
+                            rootNode.balance = 0;
+                            left.balance = 1;
+                            break;
+                    }
+                    right.balance = 0;
+                    rootNode.Left = RotateLeft(left);
+                    rootNode = RotateRight(rootNode);
+                    this.isUnbalanced = false;
+                    break;
+            }
+            return rootNode;
+        }
+
+        private TreeNode InsertRightBalance(TreeNode rootNode)
+        {
+            TreeNode right = rootNode.Right;
+            switch (right.balance)
+            {
+                case -1:
+                    rootNode.balance = 0;
+                    right.balance = 0;
+                    rootNode = RotateLeft(rootNode);
+                    this.isUnbalanced = false;
+                    break;
+                case 0:
+                    Console.WriteLine("error");
+                    break;
+                case 1:
+                    TreeNode left = right.Left;
+                    switch (left.balance)
+                    {
+                        case 1:
+                            rootNode.balance = -1;
+                            right.balance = 0;
+                            break;
+                        case 0:
+                            rootNode.balance = 0;
+                            right.balance = 1;
+                            break;
+                        case -1:
+                            rootNode.balance = 0;
+                            right.balance = 1;
+                            break;
+                    }
+                    left.balance = 0;
+                    rootNode.Right = RotateRight(right);
+                    rootNode = RotateLeft(rootNode);
+                    this.isUnbalanced = false;
+                    break;
+            }
+            return rootNode;
+
+        }
+        public void Insert(int data)
+        {
+            TreeNode node = new TreeNode(data);
+            isUnbalanced = false;
+            this.RootNode = AVLTreeInsert(this.RootNode, node);
+           
+        }
+
+        private TreeNode AVLTreeInsert(TreeNode rootNode , TreeNode newNode)
+        {
+            // 트리 마지막이 빈값일경우 바로 넣고 리턴
+            if(rootNode ==null)
+            {
+                rootNode = newNode;
+                this.isUnbalanced = true;
+                return rootNode;
+            }
+            if(newNode.data < rootNode.data)    // 루트보다 작으면 왼쪽
+            {
+                rootNode.Left = AVLTreeInsert(rootNode.Left, newNode);
+                if(this.isUnbalanced)
+                {
+                    switch(rootNode.balance)
+                    {
+                        case 1: // 왼쪽으로 2level 치우침 LL or LR
+                            rootNode = InsertLeftBalance(rootNode);
+                            break;
+                        case 0: // 왼쪽으로 치우침 1level
+                            rootNode.balance = 1;
+                            break;
+                        case -1: // 오른쪽치우쳤는데 왼쪽으로 맞춤
+                            rootNode.balance = 0;
+                            this.isUnbalanced = false;
+                            break;
+                    }
+                    
+                }
+                return rootNode;
+            }
+            else
+            {
+                // 루트값보타 크면 오른쪽
+                rootNode.Right = this.AVLTreeInsert(rootNode.Right, newNode);
+                if(this.isUnbalanced)
+                {
+                    switch(rootNode.balance)
+                    {
+                        case 1://균형
+                            rootNode.balance = 0;
+                            this.isUnbalanced = false;
+                            break;
+                        case 0: // 치우침
+                            rootNode.balance = -1;
+                            break;
+                        case -1:// 더 치우침 RR , LR
+                            rootNode = InsertRightBalance(rootNode);
+                            break;
+                    }
+                }
+
+            }
+            
+
+            return rootNode;
+        }
+
+        private int Visit(TreeNode current)
+        {
+            return current.data;
+        }
+
+        public void Preorder(TreeNode current) 
+        {
+            if (current != null) 
+            {
+                Console.WriteLine(Visit(current));
+                    
+                Preorder(current.Left);
+                Preorder(current.Right);
+            }
+        }
+
+        public void Inorder(TreeNode current)
+        {
+            if (current != null)
+            {
+                Inorder(current.Left);
+                Console.WriteLine(Visit(current));
+                Inorder(current.Right);
+            }
+        }
+        public void Postorder(TreeNode current)
+        {
+            if (current != null)
+            {
+                Postorder(current.Left);
+                Postorder(current.Right);
+                Console.WriteLine(Visit(current));
+            }
+        }
+
     }
 }
